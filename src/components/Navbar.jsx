@@ -1,25 +1,18 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import '../index.css'
 
 function Navbar() {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ? localStorage.getItem("theme") : "light");
 
     const handleToggle = (e) => {
-        if(e.target.checked) {
-            setTheme("dark");
-            console.log(theme, "tema dark");
-        } else {
-            setTheme("light");
-            console.log(theme, "tema light");
-        } 
-        console.log(theme, "fuori if"); 
+        let newTheme = e.target.checked ? "dark" : "light";
+        setTheme(newTheme);
     }
 
-    useState(() => {
+    useEffect(() => {
         localStorage.setItem("theme", theme);
         const localTheme = localStorage.getItem("theme");
         document.querySelector("html").setAttribute("data-theme", localTheme);
-        console.log(theme, "useState");
     }, [theme]);
 
     return (
