@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../index.css";
 import TypewriterText from "./TipewriterText";
+import HighlightedTitle from "./HighlightedTitle";
 
 // Funzione debounce
 const debounce = (func, wait) => {
@@ -23,31 +24,43 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "bg-red-300",
+    color: "white",
   },
   {
     id: 2,
-    title: "Francesco Cadderi",
+    title: "JavaScript",
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "bg-red-300",
+    color: "#F0DB4F",
+    icon: "https://brandpalettes.com/wp-content/uploads/2021/06/javascript-color-codes.svg",
   },
   {
     id: 3,
-    title: "Francesco Cadderi",
+    title: "React",
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "bg-red-300",
+    color: "#61DBFB",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   },
   {
     id: 4,
-    title: "Francesco Cadderi",
+    title: "PHP",
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "bg-red-300",
+    color: "#777BB3",
+    icon: "https://www.php.net//images/logos/new-php-logo.svg",
+  },
+  {
+    id: 5,
+    title: "Laravel",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#F05340",
+    icon: "https://brandpalettes.com/wp-content/uploads/2021/06/laravel-color-codes.svg",
   },
 ];
 
@@ -106,13 +119,12 @@ function ScrollableBlock() {
                 exit="exit"
                 variants={variants}
                 transition={{ duration: 0.5 }}
-                className={`w-96 h-96 flex flex-col`}
+                className="w-96 h-96 flex flex-col"
               >
-                <h1 className="self-start mt-2 ml-2">{section.title}</h1>{" "}
-                <p className="self-start mt-5 ml-2 mb-24">{section.subtitle}</p>{" "}
+                <HighlightedTitle title={section.title} color={section.color} />
+                <p className="self-start mt-5 ml-2 mb-24">{section.subtitle}</p>
                 <div className="self-start mb-2 ml-2">
-                  {" "}
-                  <TypewriterText text={section.content} />{" "}
+                  <TypewriterText text={section.content} />
                 </div>
               </motion.div>
             )
