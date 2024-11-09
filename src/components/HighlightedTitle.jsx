@@ -28,7 +28,7 @@ const HighlightedTitle = ({ title, color }) => {
         variants={highlight}
       />
       <h1
-        className="text-4xl font-extrabold relative z-10 mt-2 ml-2"
+        className="text-4xl font-extrabold relative z-10 ml-2"
         style={{ color }}
       >
         {title}

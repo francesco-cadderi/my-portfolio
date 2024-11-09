@@ -4,7 +4,6 @@ import "../index.css";
 import TypewriterText from "./TipewriterText";
 import HighlightedTitle from "./HighlightedTitle";
 
-// Funzione debounce
 const debounce = (func, wait) => {
   let timeout;
   return function (...args) {
@@ -119,11 +118,21 @@ function ScrollableBlock() {
                 exit="exit"
                 variants={variants}
                 transition={{ duration: 0.5 }}
-                className="w-96 h-96 flex flex-col"
+                className="w-[30rem] h-80 flex flex-col pl-10"
               >
+                {/* Animazione del bordo */}
+                <motion.div
+                  className="absolute top-0 left-0 w-1 border-l-4 border-black"
+                  initial={{ height: 0 }}
+                  animate={{ height: "100%" }}
+                  transition={{ duration: 0.6, ease: "easeOut" }}
+                />
                 <HighlightedTitle title={section.title} color={section.color} />
-                <p className="self-start mt-5 ml-2 mb-24">{section.subtitle}</p>
-                <div className="self-start mb-2 ml-2">
+                <p className="self-start mt-5 mb-20 font-semibold">
+                  {section.subtitle}
+                </p>
+
+                <div className="self-start">
                   <TypewriterText text={section.content} />
                 </div>
               </motion.div>

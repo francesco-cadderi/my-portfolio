@@ -22,7 +22,7 @@ export default {
           "neutral-content": "oklch(94.51% 0.179 104.32)",
           "base-100": "blue",
           color: "black",
-          "background-color": "white",
+          "background-color": "#e7e5e4",
           "--rounded-box": "0",
           "--rounded-btn": "0",
           "--rounded-badge": "0",

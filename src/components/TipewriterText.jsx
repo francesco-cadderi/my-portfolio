@@ -10,7 +10,7 @@ const TypewriterText = ({ text }) => {
       const timeout = setTimeout(() => {
         setDisplayedText(displayedText + text[index]);
         setIndex(index + 1);
-      }, 10);
+      }, 15);
       return () => clearTimeout(timeout);
     }
   }, [index, text, displayedText]);
@@ -24,6 +24,7 @@ const TypewriterText = ({ text }) => {
       {displayedText.split("").map((char, idx) => (
         <motion.span key={idx}>{char}</motion.span>
       ))}
+      <span className="border-l-2 border-black"></span>
     </motion.div>
   );
 };
