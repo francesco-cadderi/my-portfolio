@@ -31,7 +31,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#F0DB4F",
+    color: "#F0DB4F", // giallo
     icon: "https://brandpalettes.com/wp-content/uploads/2021/06/javascript-color-codes.svg",
   },
   {
@@ -40,7 +40,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#61DBFB",
+    color: "#61DBFB", // azzurro
     icon: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   },
   {
@@ -49,7 +49,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#777BB3",
+    color: "#777BB3", // blu
     icon: "https://www.php.net//images/logos/new-php-logo.svg",
   },
   {
@@ -58,7 +58,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#F05340",
+    color: "#F05340", // arancione
     icon: "https://brandpalettes.com/wp-content/uploads/2021/06/laravel-color-codes.svg",
   },
 ];
@@ -105,40 +105,66 @@ function ScrollableBlock() {
   };
 
   return (
-    <div className="w-screen h-screen flex justify-center items-center relative overflow-hidden">
-      <AnimatePresence custom={direction}>
-        {sections.map(
-          (section, index) =>
-            index === currentSection && (
-              <motion.div
-                key={section.id}
-                custom={direction}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                variants={variants}
-                transition={{ duration: 0.5 }}
-                className="w-[30rem] h-80 flex flex-col pl-10"
-              >
-                {/* Animazione del bordo */}
-                <motion.div
-                  className="absolute top-0 left-0 w-1 border-l-4 border-black"
-                  initial={{ height: 0 }}
-                  animate={{ height: "100%" }}
-                  transition={{ duration: 0.6, ease: "easeOut" }}
-                />
-                <HighlightedTitle title={section.title} color={section.color} />
-                <p className="self-start mt-5 mb-20 font-semibold">
-                  {section.subtitle}
-                </p>
+    <div className="w-screen h-screen flex items-center justify-center">
+      <div className="flex w-4/5 h-80">
+        {/* Breadcrumbs Column */}
+        <div className="w-7 flex flex-col justify-start items-center h-full">
+          {sections.map((section, index) => (
+            <div
+              key={section.id}
+              className={`w-full h-[calc(100%/5)] transition-all duration-200 ${
+                currentSection === index
+                  ? `bg-[${section.color}]`
+                  : "bg-gray-300"
+              }`}
+              style={{
+                backgroundColor:
+                  currentSection === index ? section.color : "transparent",
+              }}
+            />
+          ))}
+        </div>
 
-                <div className="self-start">
-                  <TypewriterText text={section.content} />
-                </div>
-              </motion.div>
-            )
-        )}
-      </AnimatePresence>
+        {/* Content Block */}
+        <div className="flex-1 flex justify-start items-center relative overflow-hidden">
+          <AnimatePresence custom={direction}>
+            {sections.map(
+              (section, index) =>
+                index === currentSection && (
+                  <motion.div
+                    key={section.id}
+                    custom={direction}
+                    initial="enter"
+                    animate="center"
+                    exit="exit"
+                    variants={variants}
+                    transition={{ duration: 0.5 }}
+                    className="w-[30rem] h-80 flex flex-col pl-10"
+                  >
+                    {/* Animazione del bordo */}
+                    <motion.div
+                      className="absolute top-0 left-0 w-1 border-l-4 border-black"
+                      initial={{ height: 0 }}
+                      animate={{ height: "100%" }}
+                      transition={{ duration: 0.6, ease: "easeOut" }}
+                    />
+                    <HighlightedTitle
+                      title={section.title}
+                      color={section.color}
+                    />
+                    <p className="self-start mt-5 mb-20 font-semibold">
+                      {section.subtitle}
+                    </p>
+
+                    <div className="self-start">
+                      <TypewriterText text={section.content} />
+                    </div>
+                  </motion.div>
+                )
+            )}
+          </AnimatePresence>
+        </div>
+      </div>
     </div>
   );
 }
