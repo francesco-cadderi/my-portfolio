@@ -106,13 +106,13 @@ function ScrollableBlock() {
 
   return (
     <div className="w-screen h-screen flex items-center justify-center">
-      <div className="flex w-4/5 h-80">
+      <div className="flex w-4/5 h-full py-24 md:py-0 md:h-80">
         {/* Breadcrumbs Column */}
         <div className="w-7 flex flex-col justify-start items-center h-full">
           {sections.map((section, index) => (
             <div
               key={section.id}
-              className={`w-full h-[calc(100%/5)] transition-all duration-200 ${
+              className={`w-full h-full transition-all duration-200 ${
                 currentSection === index
                   ? `bg-[${section.color}]`
                   : "bg-gray-300"
@@ -139,7 +139,7 @@ function ScrollableBlock() {
                     exit="exit"
                     variants={variants}
                     transition={{ duration: 0.5 }}
-                    className="w-[30rem] h-80 flex flex-col pl-10"
+                    className="w-[30rem] h-full md:h-80 flex flex-col pl-10"
                   >
                     {/* Animazione del bordo */}
                     <motion.div
