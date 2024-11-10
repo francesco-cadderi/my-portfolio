@@ -24,7 +24,7 @@ const TypewriterText = ({ text }) => {
       {displayedText.split("").map((char, idx) => (
         <motion.span key={idx}>{char}</motion.span>
       ))}
-      <span className="border-l-2 border-black"></span>
+      <span className="border-l-2 border-black animate-pulseOpacity"></span>
     </motion.div>
   );
 };

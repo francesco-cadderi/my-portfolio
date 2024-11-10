@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import "../index.css";
-import TypewriterText from "./TipewriterText";
+import TypewriterText from "./TypewriterText";
 import HighlightedTitle from "./HighlightedTitle";
 
 const debounce = (func, wait) => {

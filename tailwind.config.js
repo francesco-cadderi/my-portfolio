@@ -2,7 +2,19 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      animation: {
+        // Animazione per alternare opacità (accensione e spegnimento netti)
+        pulseOpacity: "pulseOpacity 1s steps(1, end) infinite",
+      },
+      keyframes: {
+        // Alternanza netta tra opacity 0 e 1
+        pulseOpacity: {
+          "0%, 100%": { opacity: "0" },
+          "50%": { opacity: "1" },
+        },
+      },
+    },
   },
   plugins: [require("daisyui")],
   daisyui: {
