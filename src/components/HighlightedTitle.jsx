@@ -35,7 +35,7 @@ const HighlightedTitle = ({ title, color, icon }) => {
           <img
             src={icon}
             alt={`${title} icon`}
-            className="w-12 h-12 mr-10 p-1 z-10"
+            className="w-12 h-auto mr-10 p-1 z-10"
           />
         )}
       </div>

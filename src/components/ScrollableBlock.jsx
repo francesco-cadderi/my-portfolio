@@ -50,7 +50,7 @@ const sections = [
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
     color: "#777BB3",
-    icon: "https://www.php.net//images/logos/new-php-logo.svg",
+    icon: "https://nehalist.io/content/images/2024/05/php.svg",
   },
   {
     id: 5,
@@ -60,6 +60,15 @@ const sections = [
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
     color: "#F05340",
     icon: "https://brandpalettes.com/wp-content/uploads/2021/06/laravel-color-codes.svg",
+  },
+  {
+    id: 6,
+    title: "MySQL",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#F05340",
+    icon: "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg",
   },
 ];
 
