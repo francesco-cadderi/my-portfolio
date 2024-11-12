@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-const HighlightedTitle = ({ title, color }) => {
+const HighlightedTitle = ({ title, color, icon }) => {
   const container = {
     hidden: { opacity: 0 },
     visible: { opacity: 1, transition: { duration: 0.5 } },
@@ -27,12 +27,18 @@ const HighlightedTitle = ({ title, color }) => {
         style={{ transformOrigin: "left" }}
         variants={highlight}
       />
-      <h1
-        className="text-4xl font-extrabold relative z-10 ml-2"
-        style={{ color }}
-      >
-        {title}
-      </h1>
+      <div className="flex justify-between items-center">
+        <h1 className="text-4xl font-extrabold relative z-10" style={{ color }}>
+          {title}
+        </h1>
+        {icon && (
+          <img
+            src={icon}
+            alt={`${title} icon`}
+            className="w-12 h-12 mr-10 p-1 z-10"
+          />
+        )}
+      </div>
     </motion.div>
   );
 };

@@ -31,7 +31,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#F0DB4F", // giallo
+    color: "#F0DB4F",
     icon: "https://brandpalettes.com/wp-content/uploads/2021/06/javascript-color-codes.svg",
   },
   {
@@ -40,7 +40,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#61DBFB", // azzurro
+    color: "#61DBFB",
     icon: "https://upload.wikimedia.org/wikipedia/commons/a/a7/React-icon.svg",
   },
   {
@@ -49,7 +49,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#777BB3", // blu
+    color: "#777BB3",
     icon: "https://www.php.net//images/logos/new-php-logo.svg",
   },
   {
@@ -58,7 +58,7 @@ const sections = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
-    color: "#F05340", // arancione
+    color: "#F05340",
     icon: "https://brandpalettes.com/wp-content/uploads/2021/06/laravel-color-codes.svg",
   },
 ];
@@ -110,17 +110,15 @@ function ScrollableBlock() {
         {/* Breadcrumbs Column */}
         <div className="w-7 flex flex-col justify-start items-center h-full">
           {sections.map((section, index) => (
-            <div
+            <motion.div
               key={section.id}
-              className={`w-full h-full transition-all duration-200 ${
-                currentSection === index
-                  ? `bg-[${section.color}]`
-                  : "bg-gray-300"
-              }`}
-              style={{
+              initial={{ backgroundColor: "transparent" }}
+              animate={{
                 backgroundColor:
                   currentSection === index ? section.color : "transparent",
               }}
+              transition={{ duration: 0.5 }}
+              className={`w-full h-full transition-all duration-200`}
             />
           ))}
         </div>
@@ -151,6 +149,7 @@ function ScrollableBlock() {
                     <HighlightedTitle
                       title={section.title}
                       color={section.color}
+                      icon={section.icon} // Passa l'icona correttamente
                     />
                     <p className="self-start mt-5 mb-20 font-semibold">
                       {section.subtitle}
