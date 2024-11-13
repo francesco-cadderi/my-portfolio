@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../index.css";
 import TypewriterText from "./TypewriterText";
 import HighlightedTitle from "./HighlightedTitle";
+import sql from "../assets/sql.png";
 
 const debounce = (func, wait) => {
   let timeout;
@@ -68,7 +69,7 @@ const sections = [
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
     color: "#F05340",
-    icon: "https://icon-library.com/images/2018/5156470_mysql-logo-transparent-ps4-logo-white-transparent-transparent.png",
+    icon: sql,
   },
 ];
 
