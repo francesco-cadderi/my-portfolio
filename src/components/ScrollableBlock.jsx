@@ -68,7 +68,7 @@ const sections = [
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
     color: "#F05340",
-    icon: "https://www.vectorlogo.zone/logos/mysql/mysql-official.svg",
+    icon: "https://icon-library.com/images/2018/5156470_mysql-logo-transparent-ps4-logo-white-transparent-transparent.png",
   },
 ];
 
