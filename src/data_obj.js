@@ -123,3 +123,30 @@ export const profile = [
     color: "#FFFFFF",
   },
 ];
+
+export const experiences = [
+  {
+    id: 1,
+    title: "Francesco Cadderi",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#FFFFFF",
+  },
+  {
+    id: 2,
+    title: "rtjsrjz",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#FFFFFF",
+  },
+  {
+    id: 3,
+    title: "awfege",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#FFFFFF",
+  },
+];

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../index.css";
 import TypewriterText from "./TypewriterText";
 import HighlightedTitle from "./HighlightedTitle";
-import { sections, profile } from "../data_obj";
+import { sections } from "../data_obj";
 
 // Funzione di debouncing
 const debounce = (func, wait) => {
@@ -18,12 +18,9 @@ const debounce = (func, wait) => {
   };
 };
 
-function ScrollableBlock({ openAccordion }) {
+function ScrollableBlock() {
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState(1);
-
-  // Determina i dati da usare in base all'accordion aperto
-  const data = openAccordion === 1 ? sections : profile;
 
   // Ottimizzare lo scroll con debounce per evitare troppi aggiornamenti
   const handleScroll = useCallback(
@@ -31,7 +28,7 @@ function ScrollableBlock({ openAccordion }) {
       const delta = event.deltaY;
 
       // Verifica la direzione dello scroll e limita i cambiamenti
-      if (delta > 0 && currentSection < data.length - 1) {
+      if (delta > 0 && currentSection < sections.length - 1) {
         setDirection(1);
         setCurrentSection((prev) => prev + 1);
       } else if (delta < 0 && currentSection > 0) {
@@ -39,7 +36,7 @@ function ScrollableBlock({ openAccordion }) {
         setCurrentSection((prev) => prev - 1);
       }
     }, 150),
-    [currentSection, data.length]
+    [currentSection]
   );
 
   useEffect(() => {
@@ -73,7 +70,7 @@ function ScrollableBlock({ openAccordion }) {
     <div className="flex md:w-4/5 md:mt-6 h-[40rem] py-4 md:py-0 md:h-80">
       {/* Colonna dei Breadcrumbs */}
       <div className="w-7 flex flex-col justify-start items-center h-full">
-        {data.map((section, index) => (
+        {sections.map((section, index) => (
           <motion.div
             key={section.id}
             initial={{ opacity: 0, backgroundColor: "#ffffff" }}
@@ -94,7 +91,7 @@ function ScrollableBlock({ openAccordion }) {
       {/* Blocco di contenuto */}
       <div className="flex-1 flex justify-start items-center relative overflow-hidden">
         <AnimatePresence custom={direction}>
-          {data.map(
+          {sections.map(
             (section, index) =>
               index === currentSection && (
                 <motion.div
