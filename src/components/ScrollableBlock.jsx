@@ -67,7 +67,7 @@ function ScrollableBlock() {
   };
 
   return (
-    <div className="flex w-4/5 h-[40rem] py-24 md:py-0 md:h-80">
+    <div className="flex md:w-4/5 h-[40rem] py-4 md:py-0 md:h-80">
       {/* Colonna dei Breadcrumbs */}
       <div className="w-7 flex flex-col justify-start items-center h-full">
         {sections.map((section, index) => (

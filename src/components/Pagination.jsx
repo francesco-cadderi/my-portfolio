@@ -15,10 +15,10 @@ const Pagination = () => {
       {/* Desktop View */}
       <div className="hidden md:flex w-full">
         {/* Colonna sinistra */}
-        <div className="w-1/2 p-4">
+        <div className="w-1/2 p-4 md:p-0">
           <Accordion
             id={1} // Ogni accordion deve avere un id unico
-            title="Accordion 1 (Left)"
+            title="Tecnologies"
             isOpen={openAccordion === 1}
             onToggle={toggleAccordion}
           />
@@ -29,7 +29,7 @@ const Pagination = () => {
           <div className="mb-4">
             <Accordion
               id={2}
-              title="Accordion 2 (Right - Top)"
+              title="Tecnologies"
               isOpen={openAccordion === 2}
               onToggle={toggleAccordion}
             />
@@ -37,7 +37,7 @@ const Pagination = () => {
           <div className="mb-4">
             <Accordion
               id={3}
-              title="Accordion 3 (Right - Bottom)"
+              title="Tecnologies"
               isOpen={openAccordion === 3}
               onToggle={toggleAccordion}
             />
@@ -50,19 +50,19 @@ const Pagination = () => {
         <div className="w-full p-4 space-y-4">
           <Accordion
             id={1}
-            title="Accordion 1 (Mobile)"
+            title="Tecnologies"
             isOpen={openAccordion === 1}
             onToggle={toggleAccordion}
           />
           <Accordion
             id={2}
-            title="Accordion 2 (Mobile)"
+            title="Tecnologies"
             isOpen={openAccordion === 2}
             onToggle={toggleAccordion}
           />
           <Accordion
             id={3}
-            title="Accordion 3 (Mobile)"
+            title="Tecnologies"
             isOpen={openAccordion === 3}
             onToggle={toggleAccordion}
           />
