@@ -1,23 +1,21 @@
 import React, { useState } from "react";
-import Accordion from "./Accordion"; // Assicurati che il path sia corretto
+import Accordion from "./Accordion";
 
 const Pagination = () => {
-  // Stato per tracciare quale accordion è aperto
-  const [openAccordion, setOpenAccordion] = useState(1); // Inizializza con 1 per aprire il primo accordion di default
+  const [openAccordion, setOpenAccordion] = useState(1);
 
-  // Funzione per gestire l'apertura/chiusura degli accordion
   const toggleAccordion = (id) => {
-    setOpenAccordion(openAccordion === id ? null : id); // Chiude se è già aperto, altrimenti apre
+    setOpenAccordion(openAccordion === id ? null : id);
   };
 
   return (
     <div className="w-full">
       {/* Desktop View */}
-      <div className="hidden md:flex w-full">
+      <div className="hidden md:flex w-full h-screen">
         {/* Colonna sinistra */}
-        <div className="w-1/2 p-4 md:p-0">
+        <div className="w-1/2 p-4 md:p-0 flex items-center justify-center">
           <Accordion
-            id={1} // Ogni accordion deve avere un id unico
+            id={1}
             title="Tecnologies"
             isOpen={openAccordion === 1}
             onToggle={toggleAccordion}
@@ -25,16 +23,16 @@ const Pagination = () => {
         </div>
 
         {/* Colonna destra */}
-        <div className="w-1/2 p-4 flex flex-col space-y-4">
-          <div className="mb-4">
+        <div className="w-1/2 p-4 md:p-0 md:my-12 flex flex-col justify-between space-y-4 flex-grow">
+          <div>
             <Accordion
               id={2}
-              title="Tecnologies"
+              title="Profile"
               isOpen={openAccordion === 2}
               onToggle={toggleAccordion}
             />
           </div>
-          <div className="mb-4">
+          <div>
             <Accordion
               id={3}
               title="Tecnologies"
