@@ -3,9 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import "../index.css";
 import TypewriterText from "./TypewriterText";
 import HighlightedTitle from "./HighlightedTitle";
-import { sections } from "../data_obj";
 
-// Funzione di debouncing
 const debounce = (func, wait) => {
   let timeout;
   return function (...args) {
@@ -18,17 +16,15 @@ const debounce = (func, wait) => {
   };
 };
 
-function ScrollableBlock() {
+function ScrollableBlock({ data }) {
   const [currentSection, setCurrentSection] = useState(0);
   const [direction, setDirection] = useState(1);
 
-  // Ottimizzare lo scroll con debounce per evitare troppi aggiornamenti
   const handleScroll = useCallback(
     debounce((event) => {
       const delta = event.deltaY;
 
-      // Verifica la direzione dello scroll e limita i cambiamenti
-      if (delta > 0 && currentSection < sections.length - 1) {
+      if (delta > 0 && currentSection < data.length - 1) {
         setDirection(1);
         setCurrentSection((prev) => prev + 1);
       } else if (delta < 0 && currentSection > 0) {
@@ -36,7 +32,7 @@ function ScrollableBlock() {
         setCurrentSection((prev) => prev - 1);
       }
     }, 150),
-    [currentSection]
+    [currentSection, data.length]
   );
 
   useEffect(() => {
@@ -46,7 +42,6 @@ function ScrollableBlock() {
     };
   }, [handleScroll]);
 
-  // Varianti per le animazioni di ingresso/uscita
   const variants = {
     enter: (direction) => ({
       y: direction > 0 ? 100 : -100,
@@ -68,16 +63,15 @@ function ScrollableBlock() {
 
   return (
     <div className="flex md:w-4/5 md:mt-6 h-[40rem] py-4 md:py-0 md:h-80">
-      {/* Colonna dei Breadcrumbs */}
       <div className="w-7 flex flex-col justify-start items-center h-full">
-        {sections.map((section, index) => (
+        {data.map((data, index) => (
           <motion.div
-            key={section.id}
+            key={data.id}
             initial={{ opacity: 0, backgroundColor: "#ffffff" }}
             animate={{
               opacity: currentSection === index ? 1 : 0,
               backgroundColor:
-                currentSection === index ? section.color : "#ffffff",
+                currentSection === index ? data.color : "#ffffff",
             }}
             transition={{
               opacity: { duration: 0.5 },
@@ -88,14 +82,13 @@ function ScrollableBlock() {
         ))}
       </div>
 
-      {/* Blocco di contenuto */}
       <div className="flex-1 flex justify-start items-center relative overflow-hidden">
         <AnimatePresence custom={direction}>
-          {sections.map(
-            (section, index) =>
+          {data.map(
+            (data, index) =>
               index === currentSection && (
                 <motion.div
-                  key={section.id}
+                  key={data.id}
                   custom={direction}
                   initial="enter"
                   animate="center"
@@ -104,23 +97,18 @@ function ScrollableBlock() {
                   transition={{ duration: 0.5 }}
                   className="w-[30rem] h-full md:h-80 flex flex-col pl-10"
                 >
-                  {/* Animazione del bordo */}
                   <motion.div
                     className="absolute top-0 left-0 w-1 border-l-4 border-black"
                     initial={{ height: 0 }}
                     animate={{ height: "100%" }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                   />
-                  <HighlightedTitle
-                    title={section.title}
-                    color={section.color}
-                  />
+                  <HighlightedTitle title={data.title} color={data.color} />
                   <p className="self-start mt-5 mb-20 font-semibold">
-                    {section.subtitle}
+                    {data.subtitle}
                   </p>
-
                   <div className="self-start">
-                    <TypewriterText text={section.content} />
+                    <TypewriterText text={data.content} />
                   </div>
                 </motion.div>
               )

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Accordion from "./Accordion";
+import { tecnologies, profile, hobbies } from "../data_obj";
 
 const Pagination = () => {
   const [openAccordion, setOpenAccordion] = useState(1);
@@ -19,6 +20,7 @@ const Pagination = () => {
             title="Tecnologies"
             isOpen={openAccordion === 1}
             onToggle={toggleAccordion}
+            tecnologies={tecnologies}
           />
         </div>
 
@@ -30,14 +32,16 @@ const Pagination = () => {
               title="Profile"
               isOpen={openAccordion === 2}
               onToggle={toggleAccordion}
+              profile={profile}
             />
           </div>
           <div>
             <Accordion
               id={3}
-              title="Tecnologies"
+              title="Hobbies"
               isOpen={openAccordion === 3}
               onToggle={toggleAccordion}
+              hobbies={hobbies}
             />
           </div>
         </div>
@@ -51,18 +55,21 @@ const Pagination = () => {
             title="Tecnologies"
             isOpen={openAccordion === 1}
             onToggle={toggleAccordion}
+            tecnologies={tecnologies}
           />
           <Accordion
             id={2}
-            title="Tecnologies"
+            title="Profile"
             isOpen={openAccordion === 2}
             onToggle={toggleAccordion}
+            profile={profile}
           />
           <Accordion
             id={3}
-            title="Tecnologies"
+            title="Hobbies"
             isOpen={openAccordion === 3}
             onToggle={toggleAccordion}
+            hobbies={hobbies}
           />
         </div>
       </div>

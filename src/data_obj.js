@@ -1,4 +1,4 @@
-export const sections = [
+export const tecnologies = [
   {
     id: 1,
     title: "JavaScript",
@@ -147,6 +147,33 @@ export const experiences = [
     subtitle: "Junior Full-stack Developer | Web Designer",
     content:
       "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#FFFFFF",
+  },
+];
+
+export const hobbies = [
+  {
+    id: 1,
+    title: "awdawdawd",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "gsegseggggggs     segsgviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#FFFFFF",
+  },
+  {
+    id: 2,
+    title: "rtjsrjz",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "gsegseggggggs     segsgviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#FFFFFF",
+  },
+  {
+    id: 3,
+    title: "awfege",
+    subtitle: "awdawdagre",
+    content:
+      "gsegseggggggs     segsgviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
     color: "#FFFFFF",
   },
 ];
