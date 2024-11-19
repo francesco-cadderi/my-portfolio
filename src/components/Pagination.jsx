@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Accordion from "./Accordion";
-import { tecnologies, profile, hobbies } from "../data_obj";
+import { tecnologies, profile, hobbies, software } from "../data_obj";
 
 const Pagination = () => {
   const [openAccordion, setOpenAccordion] = useState(1);
@@ -12,9 +12,9 @@ const Pagination = () => {
   return (
     <div className="w-full">
       {/* Desktop View */}
-      <div className="hidden md:flex w-full h-screen">
+      <div className=" md:flex w-full h-screen">
         {/* Colonna sinistra */}
-        <div className="w-1/2 p-4 md:p-0 flex items-center justify-center">
+        <div className="w-1/2 px-4 md:my-12 flex flex-col justify-between space-y-4 flex-grow">
           <Accordion
             id={1}
             title="Tecnologies"
@@ -22,24 +22,31 @@ const Pagination = () => {
             onToggle={toggleAccordion}
             tecnologies={tecnologies}
           />
+          <Accordion
+            id={2}
+            title="Software"
+            isOpen={openAccordion === 2}
+            onToggle={toggleAccordion}
+            software={software}
+          />
         </div>
 
         {/* Colonna destra */}
-        <div className="w-1/2 p-4 md:p-0 md:my-12 flex flex-col justify-between space-y-4 flex-grow">
+        <div className="w-1/2 px-4 md:my-12 flex flex-col justify-between space-y-4 flex-grow">
           <div>
             <Accordion
-              id={2}
+              id={3}
               title="Profile"
-              isOpen={openAccordion === 2}
+              isOpen={openAccordion === 3}
               onToggle={toggleAccordion}
               profile={profile}
             />
           </div>
           <div>
             <Accordion
-              id={3}
+              id={4}
               title="Hobbies"
-              isOpen={openAccordion === 3}
+              isOpen={openAccordion === 4}
               onToggle={toggleAccordion}
               hobbies={hobbies}
             />
@@ -47,7 +54,7 @@ const Pagination = () => {
         </div>
       </div>
 
-      {/* Mobile View */}
+      {/*
       <div className="flex md:hidden w-full">
         <div className="w-full p-4 space-y-4">
           <Accordion
@@ -71,8 +78,15 @@ const Pagination = () => {
             onToggle={toggleAccordion}
             hobbies={hobbies}
           />
-        </div>
-      </div>
+          <Accordion
+            id={4}
+            title="Software"
+            isOpen={openAccordion === 4}
+            onToggle={toggleAccordion}
+            software={software}
+          />
+        </div> 
+      </div>*/}
     </div>
   );
 };

@@ -177,3 +177,38 @@ export const hobbies = [
     color: "#FFFFFF",
   },
 ];
+
+export const software = [
+  {
+    id: 1,
+    title: "Illustrator",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#f8a829",
+  },
+  {
+    id: 2,
+    title: "Photoshop",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#31A8FF",
+  },
+  {
+    id: 3,
+    title: "Figma",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#24CB71",
+  },
+  {
+    id: 4,
+    title: "GIT",
+    subtitle: "Junior Full-stack Developer | Web Designer",
+    content:
+      "Developer & Web designer curioso e dinamico, sempre pronto ad assorbire nuove tecniche da aggiungere al proprio skillset. Grazie a pregresse esperienze ho sviluppato responsabilità ed organizzazione, nonché una buona dose di empatia e pazienza.",
+    color: "#f14e32",
+  },
+];
